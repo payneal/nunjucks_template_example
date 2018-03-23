@@ -1,0 +1,36 @@
+{###########################################################}
+{# Keep structure, implement included flexbox grid library #}
+{###########################################################}
+
+<div class="container-1 container-5">
+    <div class="full-side-1">
+        <h2>{{ranking}}</h2>
+        <p>{{description}}</p>
+        <div class="container-3">
+            <div class="left">
+                <img class="badge hideMe" src="/img/national-universities-badge.svg" alt="">
+            </div>
+            <div class="right">
+                <ul>
+                    {% for school in rankings %}
+                        <li class="container-2">
+                            <div class="side-1">
+                                <strong class="side-1">#{{school.rank | safe }}</strong>
+                            </div>
+                            <div class="side-2">
+                                <a href="">{{school.institution | safe }}</a>
+                                <div>
+                                    <strong>Location: </strong>{{ school.location | safe}} 
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-4 full-side-2">
+        <img class="add" height="250px" width="300px" src="http://placehold.it/600x500?text=dummy+ad">
+    </div>
+</div>
